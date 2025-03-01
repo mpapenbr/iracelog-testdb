@@ -1,4 +1,4 @@
-FROM postgres:14-alpine as dumper
+FROM postgres:17-alpine as dumper
 COPY iracelog_testdata.sql /docker-entrypoint-initdb.d/
 
 RUN ["sed", "-i", "s/exec \"$@\"/echo \"skipping...\"/", "/usr/local/bin/docker-entrypoint.sh"]
@@ -9,7 +9,7 @@ ENV PGDATA=/data
 RUN ["/usr/local/bin/docker-entrypoint.sh", "postgres"]
 
 
-FROM postgres:14-alpine 
+FROM postgres:17-alpine 
 COPY --from=dumper /data $PGDATA
 
 
