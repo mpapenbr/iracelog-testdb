@@ -25,7 +25,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp" WITH SCHEMA public;
 
 
 --
--- Name: EXTENSION "uuid-ossp"; Type: COMMENT; Schema: -; Owner: -
+-- Name: EXTENSION "uuid-ossp"; Type: COMMENT; Schema: -; Owner: 
 --
 
 COMMENT ON EXTENSION "uuid-ossp" IS 'generate universally unique identifiers (UUIDs)';
@@ -36,7 +36,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: analysis_proto; Type: TABLE; Schema: public; Owner: -
+-- Name: analysis_proto; Type: TABLE; Schema: public; Owner: docker
 --
 
 CREATE TABLE public.analysis_proto (
@@ -46,22 +46,24 @@ CREATE TABLE public.analysis_proto (
 );
 
 
+ALTER TABLE public.analysis_proto OWNER TO docker;
+
 --
--- Name: TABLE analysis_proto; Type: COMMENT; Schema: public; Owner: -
+-- Name: TABLE analysis_proto; Type: COMMENT; Schema: public; Owner: docker
 --
 
 COMMENT ON TABLE public.analysis_proto IS 'Analysis data in binary protobuf format';
 
 
 --
--- Name: COLUMN analysis_proto.record_stamp; Type: COMMENT; Schema: public; Owner: -
+-- Name: COLUMN analysis_proto.record_stamp; Type: COMMENT; Schema: public; Owner: docker
 --
 
 COMMENT ON COLUMN public.analysis_proto.record_stamp IS 'Timestamp when data was persisted';
 
 
 --
--- Name: c_car; Type: TABLE; Schema: public; Owner: -
+-- Name: c_car; Type: TABLE; Schema: public; Owner: docker
 --
 
 CREATE TABLE public.c_car (
@@ -78,8 +80,10 @@ CREATE TABLE public.c_car (
 );
 
 
+ALTER TABLE public.c_car OWNER TO docker;
+
 --
--- Name: c_car_class; Type: TABLE; Schema: public; Owner: -
+-- Name: c_car_class; Type: TABLE; Schema: public; Owner: docker
 --
 
 CREATE TABLE public.c_car_class (
@@ -90,8 +94,10 @@ CREATE TABLE public.c_car_class (
 );
 
 
+ALTER TABLE public.c_car_class OWNER TO docker;
+
 --
--- Name: c_car_class_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: c_car_class_id_seq; Type: SEQUENCE; Schema: public; Owner: docker
 --
 
 CREATE SEQUENCE public.c_car_class_id_seq
@@ -103,15 +109,17 @@ CREATE SEQUENCE public.c_car_class_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.c_car_class_id_seq OWNER TO docker;
+
 --
--- Name: c_car_class_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: c_car_class_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: docker
 --
 
 ALTER SEQUENCE public.c_car_class_id_seq OWNED BY public.c_car_class.id;
 
 
 --
--- Name: c_car_driver; Type: TABLE; Schema: public; Owner: -
+-- Name: c_car_driver; Type: TABLE; Schema: public; Owner: docker
 --
 
 CREATE TABLE public.c_car_driver (
@@ -128,8 +136,10 @@ CREATE TABLE public.c_car_driver (
 );
 
 
+ALTER TABLE public.c_car_driver OWNER TO docker;
+
 --
--- Name: c_car_driver_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: c_car_driver_id_seq; Type: SEQUENCE; Schema: public; Owner: docker
 --
 
 CREATE SEQUENCE public.c_car_driver_id_seq
@@ -141,15 +151,17 @@ CREATE SEQUENCE public.c_car_driver_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.c_car_driver_id_seq OWNER TO docker;
+
 --
--- Name: c_car_driver_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: c_car_driver_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: docker
 --
 
 ALTER SEQUENCE public.c_car_driver_id_seq OWNED BY public.c_car_driver.id;
 
 
 --
--- Name: c_car_entry; Type: TABLE; Schema: public; Owner: -
+-- Name: c_car_entry; Type: TABLE; Schema: public; Owner: docker
 --
 
 CREATE TABLE public.c_car_entry (
@@ -162,8 +174,10 @@ CREATE TABLE public.c_car_entry (
 );
 
 
+ALTER TABLE public.c_car_entry OWNER TO docker;
+
 --
--- Name: c_car_entry_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: c_car_entry_id_seq; Type: SEQUENCE; Schema: public; Owner: docker
 --
 
 CREATE SEQUENCE public.c_car_entry_id_seq
@@ -175,15 +189,17 @@ CREATE SEQUENCE public.c_car_entry_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.c_car_entry_id_seq OWNER TO docker;
+
 --
--- Name: c_car_entry_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: c_car_entry_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: docker
 --
 
 ALTER SEQUENCE public.c_car_entry_id_seq OWNED BY public.c_car_entry.id;
 
 
 --
--- Name: c_car_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: c_car_id_seq; Type: SEQUENCE; Schema: public; Owner: docker
 --
 
 CREATE SEQUENCE public.c_car_id_seq
@@ -195,15 +211,17 @@ CREATE SEQUENCE public.c_car_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.c_car_id_seq OWNER TO docker;
+
 --
--- Name: c_car_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: c_car_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: docker
 --
 
 ALTER SEQUENCE public.c_car_id_seq OWNED BY public.c_car.id;
 
 
 --
--- Name: c_car_team; Type: TABLE; Schema: public; Owner: -
+-- Name: c_car_team; Type: TABLE; Schema: public; Owner: docker
 --
 
 CREATE TABLE public.c_car_team (
@@ -214,8 +232,10 @@ CREATE TABLE public.c_car_team (
 );
 
 
+ALTER TABLE public.c_car_team OWNER TO docker;
+
 --
--- Name: c_car_team_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: c_car_team_id_seq; Type: SEQUENCE; Schema: public; Owner: docker
 --
 
 CREATE SEQUENCE public.c_car_team_id_seq
@@ -227,15 +247,17 @@ CREATE SEQUENCE public.c_car_team_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.c_car_team_id_seq OWNER TO docker;
+
 --
--- Name: c_car_team_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: c_car_team_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: docker
 --
 
 ALTER SEQUENCE public.c_car_team_id_seq OWNED BY public.c_car_team.id;
 
 
 --
--- Name: car_state_proto; Type: TABLE; Schema: public; Owner: -
+-- Name: car_state_proto; Type: TABLE; Schema: public; Owner: docker
 --
 
 CREATE TABLE public.car_state_proto (
@@ -245,8 +267,10 @@ CREATE TABLE public.car_state_proto (
 );
 
 
+ALTER TABLE public.car_state_proto OWNER TO docker;
+
 --
--- Name: car_state_proto_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: car_state_proto_id_seq; Type: SEQUENCE; Schema: public; Owner: docker
 --
 
 CREATE SEQUENCE public.car_state_proto_id_seq
@@ -258,15 +282,17 @@ CREATE SEQUENCE public.car_state_proto_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.car_state_proto_id_seq OWNER TO docker;
+
 --
--- Name: car_state_proto_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: car_state_proto_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: docker
 --
 
 ALTER SEQUENCE public.car_state_proto_id_seq OWNED BY public.car_state_proto.id;
 
 
 --
--- Name: event; Type: TABLE; Schema: public; Owner: -
+-- Name: event; Type: TABLE; Schema: public; Owner: docker
 --
 
 CREATE TABLE public.event (
@@ -288,40 +314,43 @@ CREATE TABLE public.event (
     replay_max_session_time numeric DEFAULT 0 NOT NULL,
     sessions jsonb NOT NULL,
     ir_sub_session_id integer DEFAULT 0 NOT NULL,
-    tenant_id integer NOT NULL
+    tenant_id integer NOT NULL,
+    tire_infos jsonb
 );
 
 
+ALTER TABLE public.event OWNER TO docker;
+
 --
--- Name: TABLE event; Type: COMMENT; Schema: public; Owner: -
+-- Name: TABLE event; Type: COMMENT; Schema: public; Owner: docker
 --
 
 COMMENT ON TABLE public.event IS 'Information about a recorded event';
 
 
 --
--- Name: COLUMN event.replay_min_timestamp; Type: COMMENT; Schema: public; Owner: -
+-- Name: COLUMN event.replay_min_timestamp; Type: COMMENT; Schema: public; Owner: docker
 --
 
 COMMENT ON COLUMN public.event.replay_min_timestamp IS 'timestamp of the race start';
 
 
 --
--- Name: COLUMN event.replay_min_session_time; Type: COMMENT; Schema: public; Owner: -
+-- Name: COLUMN event.replay_min_session_time; Type: COMMENT; Schema: public; Owner: docker
 --
 
 COMMENT ON COLUMN public.event.replay_min_session_time IS 'session time of the race start';
 
 
 --
--- Name: COLUMN event.replay_max_session_time; Type: COMMENT; Schema: public; Owner: -
+-- Name: COLUMN event.replay_max_session_time; Type: COMMENT; Schema: public; Owner: docker
 --
 
 COMMENT ON COLUMN public.event.replay_max_session_time IS 'session time of the race end';
 
 
 --
--- Name: event_ext; Type: TABLE; Schema: public; Owner: -
+-- Name: event_ext; Type: TABLE; Schema: public; Owner: docker
 --
 
 CREATE TABLE public.event_ext (
@@ -330,15 +359,17 @@ CREATE TABLE public.event_ext (
 );
 
 
+ALTER TABLE public.event_ext OWNER TO docker;
+
 --
--- Name: TABLE event_ext; Type: COMMENT; Schema: public; Owner: -
+-- Name: TABLE event_ext; Type: COMMENT; Schema: public; Owner: docker
 --
 
 COMMENT ON TABLE public.event_ext IS 'additional information about a recorded event';
 
 
 --
--- Name: event_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: event_id_seq; Type: SEQUENCE; Schema: public; Owner: docker
 --
 
 CREATE SEQUENCE public.event_id_seq
@@ -350,15 +381,17 @@ CREATE SEQUENCE public.event_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.event_id_seq OWNER TO docker;
+
 --
--- Name: event_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: event_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: docker
 --
 
 ALTER SEQUENCE public.event_id_seq OWNED BY public.event.id;
 
 
 --
--- Name: msg_state_proto; Type: TABLE; Schema: public; Owner: -
+-- Name: msg_state_proto; Type: TABLE; Schema: public; Owner: docker
 --
 
 CREATE TABLE public.msg_state_proto (
@@ -368,15 +401,17 @@ CREATE TABLE public.msg_state_proto (
 );
 
 
+ALTER TABLE public.msg_state_proto OWNER TO docker;
+
 --
--- Name: TABLE msg_state_proto; Type: COMMENT; Schema: public; Owner: -
+-- Name: TABLE msg_state_proto; Type: COMMENT; Schema: public; Owner: docker
 --
 
 COMMENT ON TABLE public.msg_state_proto IS 'Messages extracted from race_state_proto';
 
 
 --
--- Name: msg_state_proto_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: msg_state_proto_id_seq; Type: SEQUENCE; Schema: public; Owner: docker
 --
 
 CREATE SEQUENCE public.msg_state_proto_id_seq
@@ -388,15 +423,17 @@ CREATE SEQUENCE public.msg_state_proto_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.msg_state_proto_id_seq OWNER TO docker;
+
 --
--- Name: msg_state_proto_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: msg_state_proto_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: docker
 --
 
 ALTER SEQUENCE public.msg_state_proto_id_seq OWNED BY public.msg_state_proto.id;
 
 
 --
--- Name: race_state_proto; Type: TABLE; Schema: public; Owner: -
+-- Name: race_state_proto; Type: TABLE; Schema: public; Owner: docker
 --
 
 CREATE TABLE public.race_state_proto (
@@ -406,8 +443,10 @@ CREATE TABLE public.race_state_proto (
 );
 
 
+ALTER TABLE public.race_state_proto OWNER TO docker;
+
 --
--- Name: race_state_proto_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: race_state_proto_id_seq; Type: SEQUENCE; Schema: public; Owner: docker
 --
 
 CREATE SEQUENCE public.race_state_proto_id_seq
@@ -419,15 +458,17 @@ CREATE SEQUENCE public.race_state_proto_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.race_state_proto_id_seq OWNER TO docker;
+
 --
--- Name: race_state_proto_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: race_state_proto_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: docker
 --
 
 ALTER SEQUENCE public.race_state_proto_id_seq OWNED BY public.race_state_proto.id;
 
 
 --
--- Name: rs_info; Type: TABLE; Schema: public; Owner: -
+-- Name: rs_info; Type: TABLE; Schema: public; Owner: docker
 --
 
 CREATE TABLE public.rs_info (
@@ -444,15 +485,17 @@ CREATE TABLE public.rs_info (
 );
 
 
+ALTER TABLE public.rs_info OWNER TO docker;
+
 --
--- Name: TABLE rs_info; Type: COMMENT; Schema: public; Owner: -
+-- Name: TABLE rs_info; Type: COMMENT; Schema: public; Owner: docker
 --
 
 COMMENT ON TABLE public.rs_info IS 'Shared information for a recorded race state';
 
 
 --
--- Name: rs_info_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: rs_info_id_seq; Type: SEQUENCE; Schema: public; Owner: docker
 --
 
 CREATE SEQUENCE public.rs_info_id_seq
@@ -464,15 +507,17 @@ CREATE SEQUENCE public.rs_info_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.rs_info_id_seq OWNER TO docker;
+
 --
--- Name: rs_info_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: rs_info_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: docker
 --
 
 ALTER SEQUENCE public.rs_info_id_seq OWNED BY public.rs_info.id;
 
 
 --
--- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: docker
 --
 
 CREATE TABLE public.schema_migrations (
@@ -481,8 +526,10 @@ CREATE TABLE public.schema_migrations (
 );
 
 
+ALTER TABLE public.schema_migrations OWNER TO docker;
+
 --
--- Name: speedmap_proto; Type: TABLE; Schema: public; Owner: -
+-- Name: speedmap_proto; Type: TABLE; Schema: public; Owner: docker
 --
 
 CREATE TABLE public.speedmap_proto (
@@ -492,8 +539,10 @@ CREATE TABLE public.speedmap_proto (
 );
 
 
+ALTER TABLE public.speedmap_proto OWNER TO docker;
+
 --
--- Name: speedmap_proto_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: speedmap_proto_id_seq; Type: SEQUENCE; Schema: public; Owner: docker
 --
 
 CREATE SEQUENCE public.speedmap_proto_id_seq
@@ -505,15 +554,17 @@ CREATE SEQUENCE public.speedmap_proto_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.speedmap_proto_id_seq OWNER TO docker;
+
 --
--- Name: speedmap_proto_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: speedmap_proto_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: docker
 --
 
 ALTER SEQUENCE public.speedmap_proto_id_seq OWNED BY public.speedmap_proto.id;
 
 
 --
--- Name: tenant; Type: TABLE; Schema: public; Owner: -
+-- Name: tenant; Type: TABLE; Schema: public; Owner: docker
 --
 
 CREATE TABLE public.tenant (
@@ -525,22 +576,24 @@ CREATE TABLE public.tenant (
 );
 
 
+ALTER TABLE public.tenant OWNER TO docker;
+
 --
--- Name: TABLE tenant; Type: COMMENT; Schema: public; Owner: -
+-- Name: TABLE tenant; Type: COMMENT; Schema: public; Owner: docker
 --
 
 COMMENT ON TABLE public.tenant IS 'Information about a tenant';
 
 
 --
--- Name: COLUMN tenant.external_id; Type: COMMENT; Schema: public; Owner: -
+-- Name: COLUMN tenant.external_id; Type: COMMENT; Schema: public; Owner: docker
 --
 
 COMMENT ON COLUMN public.tenant.external_id IS 'for external use';
 
 
 --
--- Name: tenant_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: tenant_id_seq; Type: SEQUENCE; Schema: public; Owner: docker
 --
 
 CREATE SEQUENCE public.tenant_id_seq
@@ -552,15 +605,17 @@ CREATE SEQUENCE public.tenant_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.tenant_id_seq OWNER TO docker;
+
 --
--- Name: tenant_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: tenant_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: docker
 --
 
 ALTER SEQUENCE public.tenant_id_seq OWNED BY public.tenant.id;
 
 
 --
--- Name: track; Type: TABLE; Schema: public; Owner: -
+-- Name: track; Type: TABLE; Schema: public; Owner: docker
 --
 
 CREATE TABLE public.track (
@@ -577,8 +632,10 @@ CREATE TABLE public.track (
 );
 
 
+ALTER TABLE public.track OWNER TO docker;
+
 --
--- Name: track_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: track_id_seq; Type: SEQUENCE; Schema: public; Owner: docker
 --
 
 CREATE SEQUENCE public.track_id_seq
@@ -590,106 +647,108 @@ CREATE SEQUENCE public.track_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.track_id_seq OWNER TO docker;
+
 --
--- Name: track_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: track_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: docker
 --
 
 ALTER SEQUENCE public.track_id_seq OWNED BY public.track.id;
 
 
 --
--- Name: c_car id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: c_car id; Type: DEFAULT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car ALTER COLUMN id SET DEFAULT nextval('public.c_car_id_seq'::regclass);
 
 
 --
--- Name: c_car_class id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: c_car_class id; Type: DEFAULT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car_class ALTER COLUMN id SET DEFAULT nextval('public.c_car_class_id_seq'::regclass);
 
 
 --
--- Name: c_car_driver id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: c_car_driver id; Type: DEFAULT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car_driver ALTER COLUMN id SET DEFAULT nextval('public.c_car_driver_id_seq'::regclass);
 
 
 --
--- Name: c_car_entry id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: c_car_entry id; Type: DEFAULT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car_entry ALTER COLUMN id SET DEFAULT nextval('public.c_car_entry_id_seq'::regclass);
 
 
 --
--- Name: c_car_team id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: c_car_team id; Type: DEFAULT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car_team ALTER COLUMN id SET DEFAULT nextval('public.c_car_team_id_seq'::regclass);
 
 
 --
--- Name: car_state_proto id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: car_state_proto id; Type: DEFAULT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.car_state_proto ALTER COLUMN id SET DEFAULT nextval('public.car_state_proto_id_seq'::regclass);
 
 
 --
--- Name: event id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: event id; Type: DEFAULT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.event ALTER COLUMN id SET DEFAULT nextval('public.event_id_seq'::regclass);
 
 
 --
--- Name: msg_state_proto id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: msg_state_proto id; Type: DEFAULT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.msg_state_proto ALTER COLUMN id SET DEFAULT nextval('public.msg_state_proto_id_seq'::regclass);
 
 
 --
--- Name: race_state_proto id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: race_state_proto id; Type: DEFAULT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.race_state_proto ALTER COLUMN id SET DEFAULT nextval('public.race_state_proto_id_seq'::regclass);
 
 
 --
--- Name: rs_info id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: rs_info id; Type: DEFAULT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.rs_info ALTER COLUMN id SET DEFAULT nextval('public.rs_info_id_seq'::regclass);
 
 
 --
--- Name: speedmap_proto id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: speedmap_proto id; Type: DEFAULT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.speedmap_proto ALTER COLUMN id SET DEFAULT nextval('public.speedmap_proto_id_seq'::regclass);
 
 
 --
--- Name: tenant id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: tenant id; Type: DEFAULT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.tenant ALTER COLUMN id SET DEFAULT nextval('public.tenant_id_seq'::regclass);
 
 
 --
--- Name: track id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: track id; Type: DEFAULT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.track ALTER COLUMN id SET DEFAULT nextval('public.track_id_seq'::regclass);
 
 
 --
--- Data for Name: analysis_proto; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: analysis_proto; Type: TABLE DATA; Schema: public; Owner: docker
 --
 
 COPY public.analysis_proto (event_id, record_stamp, protodata) FROM stdin;
@@ -697,7 +756,7 @@ COPY public.analysis_proto (event_id, record_stamp, protodata) FROM stdin;
 
 
 --
--- Data for Name: c_car; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: c_car; Type: TABLE DATA; Schema: public; Owner: docker
 --
 
 COPY public.c_car (id, event_id, name, name_short, car_id, c_car_class_id, fuel_pct, power_adjust, weight_penalty, dry_tire_sets) FROM stdin;
@@ -779,7 +838,7 @@ COPY public.c_car (id, event_id, name, name_short, car_id, c_car_class_id, fuel_
 
 
 --
--- Data for Name: c_car_class; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: c_car_class; Type: TABLE DATA; Schema: public; Owner: docker
 --
 
 COPY public.c_car_class (id, event_id, name, car_class_id) FROM stdin;
@@ -806,7 +865,7 @@ COPY public.c_car_class (id, event_id, name, car_class_id) FROM stdin;
 
 
 --
--- Data for Name: c_car_driver; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: c_car_driver; Type: TABLE DATA; Schema: public; Owner: docker
 --
 
 COPY public.c_car_driver (id, c_car_entry_id, driver_id, name, initials, abbrev_name, irating, lic_level, lic_sub_level, lic_string) FROM stdin;
@@ -1799,7 +1858,7 @@ COPY public.c_car_driver (id, c_car_entry_id, driver_id, name, initials, abbrev_
 
 
 --
--- Data for Name: c_car_entry; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: c_car_entry; Type: TABLE DATA; Schema: public; Owner: docker
 --
 
 COPY public.c_car_entry (id, event_id, c_car_id, car_idx, car_number, car_number_raw) FROM stdin;
@@ -2313,7 +2372,7 @@ COPY public.c_car_entry (id, event_id, c_car_id, car_idx, car_number, car_number
 
 
 --
--- Data for Name: c_car_team; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: c_car_team; Type: TABLE DATA; Schema: public; Owner: docker
 --
 
 COPY public.c_car_team (id, c_car_entry_id, team_id, name) FROM stdin;
@@ -2827,7 +2886,7 @@ COPY public.c_car_team (id, c_car_entry_id, team_id, name) FROM stdin;
 
 
 --
--- Data for Name: car_state_proto; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: car_state_proto; Type: TABLE DATA; Schema: public; Owner: docker
 --
 
 COPY public.car_state_proto (id, rs_info_id, protodata) FROM stdin;
@@ -2835,26 +2894,26 @@ COPY public.car_state_proto (id, rs_info_id, protodata) FROM stdin;
 
 
 --
--- Data for Name: event; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: event; Type: TABLE DATA; Schema: public; Owner: docker
 --
 
-COPY public.event (id, event_key, name, description, event_time, racelogger_version, team_racing, multi_class, num_car_types, num_car_classes, ir_session_id, track_id, pit_speed, replay_min_timestamp, replay_min_session_time, replay_max_session_time, sessions, ir_sub_session_id, tenant_id) FROM stdin;
-4	1336293677b84a05a452d7e8b6679419	6 Hrs of the Glen	Top Split	2024-06-15 14:40:57.157754+02	0.11.2	t	t	14	3	240985229	434	64.37000274658203	2024-06-15 14:44:47.216094+02	327.26666259765625	22106.56640625	[{"name": "PRACTICE"}, {"num": 1, "name": "QUALIFY"}, {"num": 2, "name": "RACE"}]	0	1
-5	2c0946a2134b7bf42f8c6ea522a30d46	2024 Spa 24	2024 Spa 24 (Fecker/Jirak/Kolibal/Schaum)	2024-07-20 14:47:08.047269+02	0.12.0	t	f	10	1	244570692	165	60	2024-07-20 14:49:48.86468+02	211.56666564941406	86307.0234375	[{"name": "PRACTICE"}, {"num": 1, "name": "QUALIFY"}, {"num": 2, "name": "RACE"}]	0	1
-15	83211e5d888fe44e5c7863570923b3e1	Roar Before The 24	Top split 1200 GMT	2025-01-11 13:27:42.594275+01	0.18.0	f	t	11	3	261849777	192	87.9800033569336	2025-01-11 13:42:40.127317+01	202.11666870117188	8974.1669921875	[{"name": "PRACTICE", "type": 1, "session_time": 1800}, {"num": 1, "laps": 2, "name": "QUALIFY", "type": 3, "session_time": 480}, {"num": 2, "name": "RACE", "type": 5, "session_time": 8640}]	0	1
-8	8f56b6e1ee29afc02694a7c03a0db2bef	VRPC Sprint Zandvoort		2024-10-10 20:31:46.95456+02	1.0.0-DEV	f	f	2	1	252494973	485	60	1970-01-01 01:00:00+01	0	0	[{"name": "PRACTICE"}, {"num": 1, "name": "QUALIFY"}, {"num": 2, "name": "HEAT 1"}, {"num": 3, "name": "HEAT 2"}, {"num": 4, "name": "WARMUP"}, {"num": 5, "name": "FEATURE"}]	0	1
-12	0a7ecad1-5ccb-48e4-b0fd-c7a68c4d657e	Fuji 8h	Top split 1200 GMT	2024-11-16 13:06:10.525847+01	0.17.0	t	f	10	1	256419747	444	60	2024-11-16 13:42:24.416204+01	218.39999389648438	29138.150390625	[{"name": "PRACTICE", "type": 1, "session_time": 1800}, {"num": 1, "laps": 2, "name": "QUALIFY", "type": 3, "session_time": 480}, {"num": 2, "name": "RACE", "type": 5, "session_time": 28800}]	0	1
-10	dda5602f46cb01e23e4050f04938a947	Petit Le Mans 2024	Top split 1200 UTC	2024-10-19 14:41:53.174021+02	0.16.0	t	t	15	3	253429068	127	72	2024-10-19 14:43:33.081486+02	286.2166748046875	36381.6171875	[{"name": "PRACTICE", "type": 1, "session_time": 1800}, {"num": 1, "laps": 2, "name": "QUALIFY", "type": 3, "session_time": 480}, {"num": 2, "name": "RACE", "type": 5, "session_time": 36000}]	0	1
-9	8f56b6e1ee29afc02694a7c03a0db2be	VRPC Main Zandvoort		2024-10-10 21:06:22.334373+02	1.0.0-DEV	f	f	2	1	252494973	485	60	1970-01-01 01:00:00+01	0	0	[{"name": "PRACTICE"}, {"num": 1, "name": "QUALIFY"}, {"num": 2, "name": "HEAT 1"}, {"num": 3, "name": "HEAT 2"}, {"num": 4, "name": "WARMUP"}, {"num": 5, "name": "FEATURE"}]	0	1
-17	821d2d55-a6cc-42db-8c2a-5bc4d2697172	Bathurst 12 Hour	Top Split 1200 GMT	2025-02-22 13:21:18.901047+01	0.20.0	t	f	11	1	266372293	219	50	2025-02-22 13:42:21.683037+01	180.78334045410156	43620.234375	[{"name": "PRACTICE", "type": 1, "session_time": 1800}, {"num": 1, "laps": 2, "name": "QUALIFY", "type": 3, "session_time": 480}, {"num": 2, "name": "RACE", "type": 5, "session_time": 43200}]	75059018	1
-13	487f8ce9fa7eb564f66ded2c3690ea7e	GT Endurance	Testrecording	2024-11-24 18:11:14.335083+01	0.18.0	t	f	10	1	257333275	95	72	2024-11-24 18:17:54.170332+01	356.0833435058594	11334.25	[{"name": "PRACTICE", "type": 1, "session_time": 180}, {"num": 1, "laps": 2, "name": "QUALIFY", "type": 3, "session_time": 480}, {"num": 2, "name": "RACE", "type": 5, "session_time": 10800}]	0	1
-14	cfdcac46db17ee6de72353bedaabed5f	VR e.V. Christmas 500	Special multicar event	2024-12-27 17:35:37.422558+01	0.18.0	t	f	4	1	260231790	525	72	2024-12-27 17:39:43.845204+01	263.6333312988281	12993.4833984375	[{"name": "PRACTICE", "type": 1, "session_time": 7200}, {"num": 1, "name": "QUALIFY", "type": 2, "session_time": 1800}, {"num": 2, "laps": 72, "name": "RACE", "type": 5, "session_time": 16200}]	0	1
-16	257f71339e32c494ea4dd80c08b989f7	Daytona 24	Top split 1200 GMT	2025-01-18 13:42:14.56755+01	0.18.0	t	t	17	3	262604776	192	87.9800033569336	2025-01-18 13:43:21.280417+01	210.60000610351562	86740.015625	[{"name": "PRACTICE", "type": 1, "session_time": 1800}, {"num": 1, "laps": 2, "name": "QUALIFY", "type": 3, "session_time": 480}, {"num": 2, "name": "RACE", "type": 5, "session_time": 86400}]	0	1
+COPY public.event (id, event_key, name, description, event_time, racelogger_version, team_racing, multi_class, num_car_types, num_car_classes, ir_session_id, track_id, pit_speed, replay_min_timestamp, replay_min_session_time, replay_max_session_time, sessions, ir_sub_session_id, tenant_id, tire_infos) FROM stdin;
+4	1336293677b84a05a452d7e8b6679419	6 Hrs of the Glen	Top Split	2024-06-15 14:40:57.157754+02	0.11.2	t	t	14	3	240985229	434	64.37000274658203	2024-06-15 14:44:47.216094+02	327.26666259765625	22106.56640625	[{"name": "PRACTICE"}, {"num": 1, "name": "QUALIFY"}, {"num": 2, "name": "RACE"}]	0	1	\N
+5	2c0946a2134b7bf42f8c6ea522a30d46	2024 Spa 24	2024 Spa 24 (Fecker/Jirak/Kolibal/Schaum)	2024-07-20 14:47:08.047269+02	0.12.0	t	f	10	1	244570692	165	60	2024-07-20 14:49:48.86468+02	211.56666564941406	86307.0234375	[{"name": "PRACTICE"}, {"num": 1, "name": "QUALIFY"}, {"num": 2, "name": "RACE"}]	0	1	\N
+15	83211e5d888fe44e5c7863570923b3e1	Roar Before The 24	Top split 1200 GMT	2025-01-11 13:27:42.594275+01	0.18.0	f	t	11	3	261849777	192	87.9800033569336	2025-01-11 13:42:40.127317+01	202.11666870117188	8974.1669921875	[{"name": "PRACTICE", "type": 1, "session_time": 1800}, {"num": 1, "laps": 2, "name": "QUALIFY", "type": 3, "session_time": 480}, {"num": 2, "name": "RACE", "type": 5, "session_time": 8640}]	0	1	\N
+8	8f56b6e1ee29afc02694a7c03a0db2bef	VRPC Sprint Zandvoort		2024-10-10 20:31:46.95456+02	1.0.0-DEV	f	f	2	1	252494973	485	60	1970-01-01 01:00:00+01	0	0	[{"name": "PRACTICE"}, {"num": 1, "name": "QUALIFY"}, {"num": 2, "name": "HEAT 1"}, {"num": 3, "name": "HEAT 2"}, {"num": 4, "name": "WARMUP"}, {"num": 5, "name": "FEATURE"}]	0	1	\N
+12	0a7ecad1-5ccb-48e4-b0fd-c7a68c4d657e	Fuji 8h	Top split 1200 GMT	2024-11-16 13:06:10.525847+01	0.17.0	t	f	10	1	256419747	444	60	2024-11-16 13:42:24.416204+01	218.39999389648438	29138.150390625	[{"name": "PRACTICE", "type": 1, "session_time": 1800}, {"num": 1, "laps": 2, "name": "QUALIFY", "type": 3, "session_time": 480}, {"num": 2, "name": "RACE", "type": 5, "session_time": 28800}]	0	1	\N
+10	dda5602f46cb01e23e4050f04938a947	Petit Le Mans 2024	Top split 1200 UTC	2024-10-19 14:41:53.174021+02	0.16.0	t	t	15	3	253429068	127	72	2024-10-19 14:43:33.081486+02	286.2166748046875	36381.6171875	[{"name": "PRACTICE", "type": 1, "session_time": 1800}, {"num": 1, "laps": 2, "name": "QUALIFY", "type": 3, "session_time": 480}, {"num": 2, "name": "RACE", "type": 5, "session_time": 36000}]	0	1	\N
+9	8f56b6e1ee29afc02694a7c03a0db2be	VRPC Main Zandvoort		2024-10-10 21:06:22.334373+02	1.0.0-DEV	f	f	2	1	252494973	485	60	1970-01-01 01:00:00+01	0	0	[{"name": "PRACTICE"}, {"num": 1, "name": "QUALIFY"}, {"num": 2, "name": "HEAT 1"}, {"num": 3, "name": "HEAT 2"}, {"num": 4, "name": "WARMUP"}, {"num": 5, "name": "FEATURE"}]	0	1	\N
+17	821d2d55-a6cc-42db-8c2a-5bc4d2697172	Bathurst 12 Hour	Top Split 1200 GMT	2025-02-22 13:21:18.901047+01	0.20.0	t	f	11	1	266372293	219	50	2025-02-22 13:42:21.683037+01	180.78334045410156	43620.234375	[{"name": "PRACTICE", "type": 1, "session_time": 1800}, {"num": 1, "laps": 2, "name": "QUALIFY", "type": 3, "session_time": 480}, {"num": 2, "name": "RACE", "type": 5, "session_time": 43200}]	75059018	1	\N
+13	487f8ce9fa7eb564f66ded2c3690ea7e	GT Endurance	Testrecording	2024-11-24 18:11:14.335083+01	0.18.0	t	f	10	1	257333275	95	72	2024-11-24 18:17:54.170332+01	356.0833435058594	11334.25	[{"name": "PRACTICE", "type": 1, "session_time": 180}, {"num": 1, "laps": 2, "name": "QUALIFY", "type": 3, "session_time": 480}, {"num": 2, "name": "RACE", "type": 5, "session_time": 10800}]	0	1	\N
+14	cfdcac46db17ee6de72353bedaabed5f	VR e.V. Christmas 500	Special multicar event	2024-12-27 17:35:37.422558+01	0.18.0	t	f	4	1	260231790	525	72	2024-12-27 17:39:43.845204+01	263.6333312988281	12993.4833984375	[{"name": "PRACTICE", "type": 1, "session_time": 7200}, {"num": 1, "name": "QUALIFY", "type": 2, "session_time": 1800}, {"num": 2, "laps": 72, "name": "RACE", "type": 5, "session_time": 16200}]	0	1	\N
+16	257f71339e32c494ea4dd80c08b989f7	Daytona 24	Top split 1200 GMT	2025-01-18 13:42:14.56755+01	0.18.0	t	t	17	3	262604776	192	87.9800033569336	2025-01-18 13:43:21.280417+01	210.60000610351562	86740.015625	[{"name": "PRACTICE", "type": 1, "session_time": 1800}, {"num": 1, "laps": 2, "name": "QUALIFY", "type": 3, "session_time": 480}, {"num": 2, "name": "RACE", "type": 5, "session_time": 86400}]	0	1	\N
 \.
 
 
 --
--- Data for Name: event_ext; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: event_ext; Type: TABLE DATA; Schema: public; Owner: docker
 --
 
 COPY public.event_ext (event_id, extra_info) FROM stdin;
@@ -2871,7 +2930,7 @@ COPY public.event_ext (event_id, extra_info) FROM stdin;
 
 
 --
--- Data for Name: msg_state_proto; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: msg_state_proto; Type: TABLE DATA; Schema: public; Owner: docker
 --
 
 COPY public.msg_state_proto (id, rs_info_id, protodata) FROM stdin;
@@ -2879,7 +2938,7 @@ COPY public.msg_state_proto (id, rs_info_id, protodata) FROM stdin;
 
 
 --
--- Data for Name: race_state_proto; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: race_state_proto; Type: TABLE DATA; Schema: public; Owner: docker
 --
 
 COPY public.race_state_proto (id, rs_info_id, protodata) FROM stdin;
@@ -2887,7 +2946,7 @@ COPY public.race_state_proto (id, rs_info_id, protodata) FROM stdin;
 
 
 --
--- Data for Name: rs_info; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: rs_info; Type: TABLE DATA; Schema: public; Owner: docker
 --
 
 COPY public.rs_info (id, event_id, record_stamp, session_time, time_of_day, air_temp, track_temp, track_wetness, precipitation, session_num) FROM stdin;
@@ -2895,16 +2954,16 @@ COPY public.rs_info (id, event_id, record_stamp, session_time, time_of_day, air_
 
 
 --
--- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: docker
 --
 
 COPY public.schema_migrations (version, dirty) FROM stdin;
-6	f
+7	f
 \.
 
 
 --
--- Data for Name: speedmap_proto; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: speedmap_proto; Type: TABLE DATA; Schema: public; Owner: docker
 --
 
 COPY public.speedmap_proto (id, rs_info_id, protodata) FROM stdin;
@@ -2912,7 +2971,7 @@ COPY public.speedmap_proto (id, rs_info_id, protodata) FROM stdin;
 
 
 --
--- Data for Name: tenant; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: tenant; Type: TABLE DATA; Schema: public; Owner: docker
 --
 
 COPY public.tenant (id, external_id, name, api_key, active) FROM stdin;
@@ -2921,7 +2980,7 @@ COPY public.tenant (id, external_id, name, api_key, active) FROM stdin;
 
 
 --
--- Data for Name: track; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: track; Type: TABLE DATA; Schema: public; Owner: docker
 --
 
 COPY public.track (id, name, short_name, config, track_length, sectors, pit_speed, pit_entry, pit_exit, pit_lane_length) FROM stdin;
@@ -2954,98 +3013,98 @@ COPY public.track (id, name, short_name, config, track_length, sectors, pit_spee
 
 
 --
--- Name: c_car_class_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: c_car_class_id_seq; Type: SEQUENCE SET; Schema: public; Owner: docker
 --
 
 SELECT pg_catalog.setval('public.c_car_class_id_seq', 28, true);
 
 
 --
--- Name: c_car_driver_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: c_car_driver_id_seq; Type: SEQUENCE SET; Schema: public; Owner: docker
 --
 
 SELECT pg_catalog.setval('public.c_car_driver_id_seq', 1484, true);
 
 
 --
--- Name: c_car_entry_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: c_car_entry_id_seq; Type: SEQUENCE SET; Schema: public; Owner: docker
 --
 
 SELECT pg_catalog.setval('public.c_car_entry_id_seq', 717, true);
 
 
 --
--- Name: c_car_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: c_car_id_seq; Type: SEQUENCE SET; Schema: public; Owner: docker
 --
 
 SELECT pg_catalog.setval('public.c_car_id_seq', 105, true);
 
 
 --
--- Name: c_car_team_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: c_car_team_id_seq; Type: SEQUENCE SET; Schema: public; Owner: docker
 --
 
 SELECT pg_catalog.setval('public.c_car_team_id_seq', 717, true);
 
 
 --
--- Name: car_state_proto_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: car_state_proto_id_seq; Type: SEQUENCE SET; Schema: public; Owner: docker
 --
 
 SELECT pg_catalog.setval('public.car_state_proto_id_seq', 2606, true);
 
 
 --
--- Name: event_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: event_id_seq; Type: SEQUENCE SET; Schema: public; Owner: docker
 --
 
 SELECT pg_catalog.setval('public.event_id_seq', 17, true);
 
 
 --
--- Name: msg_state_proto_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: msg_state_proto_id_seq; Type: SEQUENCE SET; Schema: public; Owner: docker
 --
 
 SELECT pg_catalog.setval('public.msg_state_proto_id_seq', 8360, true);
 
 
 --
--- Name: race_state_proto_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: race_state_proto_id_seq; Type: SEQUENCE SET; Schema: public; Owner: docker
 --
 
 SELECT pg_catalog.setval('public.race_state_proto_id_seq', 472510, true);
 
 
 --
--- Name: rs_info_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: rs_info_id_seq; Type: SEQUENCE SET; Schema: public; Owner: docker
 --
 
 SELECT pg_catalog.setval('public.rs_info_id_seq', 472522, true);
 
 
 --
--- Name: speedmap_proto_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: speedmap_proto_id_seq; Type: SEQUENCE SET; Schema: public; Owner: docker
 --
 
 SELECT pg_catalog.setval('public.speedmap_proto_id_seq', 15932, true);
 
 
 --
--- Name: tenant_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: tenant_id_seq; Type: SEQUENCE SET; Schema: public; Owner: docker
 --
 
 SELECT pg_catalog.setval('public.tenant_id_seq', 1, true);
 
 
 --
--- Name: track_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: track_id_seq; Type: SEQUENCE SET; Schema: public; Owner: docker
 --
 
 SELECT pg_catalog.setval('public.track_id_seq', 1, false);
 
 
 --
--- Name: analysis_proto analysis_proto_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: analysis_proto analysis_proto_pkey; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.analysis_proto
@@ -3053,7 +3112,7 @@ ALTER TABLE ONLY public.analysis_proto
 
 
 --
--- Name: c_car_class c_car_class_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: c_car_class c_car_class_pkey; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car_class
@@ -3061,7 +3120,7 @@ ALTER TABLE ONLY public.c_car_class
 
 
 --
--- Name: c_car_driver c_car_driver_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: c_car_driver c_car_driver_pkey; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car_driver
@@ -3069,7 +3128,7 @@ ALTER TABLE ONLY public.c_car_driver
 
 
 --
--- Name: c_car_entry c_car_entry_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: c_car_entry c_car_entry_pkey; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car_entry
@@ -3077,7 +3136,7 @@ ALTER TABLE ONLY public.c_car_entry
 
 
 --
--- Name: c_car c_car_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: c_car c_car_pkey; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car
@@ -3085,7 +3144,7 @@ ALTER TABLE ONLY public.c_car
 
 
 --
--- Name: c_car_team c_car_team_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: c_car_team c_car_team_pkey; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car_team
@@ -3093,7 +3152,7 @@ ALTER TABLE ONLY public.c_car_team
 
 
 --
--- Name: car_state_proto car_state_proto_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: car_state_proto car_state_proto_pkey; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.car_state_proto
@@ -3101,7 +3160,7 @@ ALTER TABLE ONLY public.car_state_proto
 
 
 --
--- Name: event event_event_key_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: event event_event_key_key; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.event
@@ -3109,7 +3168,7 @@ ALTER TABLE ONLY public.event
 
 
 --
--- Name: event_ext event_ext_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: event_ext event_ext_pkey; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.event_ext
@@ -3117,7 +3176,7 @@ ALTER TABLE ONLY public.event_ext
 
 
 --
--- Name: event event_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: event event_pkey; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.event
@@ -3125,7 +3184,7 @@ ALTER TABLE ONLY public.event
 
 
 --
--- Name: msg_state_proto msg_state_proto_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: msg_state_proto msg_state_proto_pkey; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.msg_state_proto
@@ -3133,7 +3192,7 @@ ALTER TABLE ONLY public.msg_state_proto
 
 
 --
--- Name: race_state_proto race_state_proto_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: race_state_proto race_state_proto_pkey; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.race_state_proto
@@ -3141,7 +3200,7 @@ ALTER TABLE ONLY public.race_state_proto
 
 
 --
--- Name: rs_info rs_info_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: rs_info rs_info_pkey; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.rs_info
@@ -3149,7 +3208,7 @@ ALTER TABLE ONLY public.rs_info
 
 
 --
--- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.schema_migrations
@@ -3157,7 +3216,7 @@ ALTER TABLE ONLY public.schema_migrations
 
 
 --
--- Name: speedmap_proto speedmap_proto_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: speedmap_proto speedmap_proto_pkey; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.speedmap_proto
@@ -3165,7 +3224,7 @@ ALTER TABLE ONLY public.speedmap_proto
 
 
 --
--- Name: tenant tenant_api_key_unique; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: tenant tenant_api_key_unique; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.tenant
@@ -3173,7 +3232,7 @@ ALTER TABLE ONLY public.tenant
 
 
 --
--- Name: tenant tenant_external_id_unique; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: tenant tenant_external_id_unique; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.tenant
@@ -3181,7 +3240,7 @@ ALTER TABLE ONLY public.tenant
 
 
 --
--- Name: tenant tenant_name_unique; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: tenant tenant_name_unique; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.tenant
@@ -3189,7 +3248,7 @@ ALTER TABLE ONLY public.tenant
 
 
 --
--- Name: tenant tenant_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: tenant tenant_pkey; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.tenant
@@ -3197,7 +3256,7 @@ ALTER TABLE ONLY public.tenant
 
 
 --
--- Name: track track_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: track track_pkey; Type: CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.track
@@ -3205,42 +3264,42 @@ ALTER TABLE ONLY public.track
 
 
 --
--- Name: car_proto_rs_info_idx; Type: INDEX; Schema: public; Owner: -
+-- Name: car_proto_rs_info_idx; Type: INDEX; Schema: public; Owner: docker
 --
 
 CREATE INDEX car_proto_rs_info_idx ON public.car_state_proto USING btree (rs_info_id);
 
 
 --
--- Name: msg_proto_rs_info_idx; Type: INDEX; Schema: public; Owner: -
+-- Name: msg_proto_rs_info_idx; Type: INDEX; Schema: public; Owner: docker
 --
 
 CREATE INDEX msg_proto_rs_info_idx ON public.msg_state_proto USING btree (rs_info_id);
 
 
 --
--- Name: race_state_rs_info_idx; Type: INDEX; Schema: public; Owner: -
+-- Name: race_state_rs_info_idx; Type: INDEX; Schema: public; Owner: docker
 --
 
 CREATE INDEX race_state_rs_info_idx ON public.race_state_proto USING btree (rs_info_id);
 
 
 --
--- Name: rs_info_event_id_idx; Type: INDEX; Schema: public; Owner: -
+-- Name: rs_info_event_id_idx; Type: INDEX; Schema: public; Owner: docker
 --
 
 CREATE INDEX rs_info_event_id_idx ON public.rs_info USING btree (event_id);
 
 
 --
--- Name: speedmap_proto_rs_info_idx; Type: INDEX; Schema: public; Owner: -
+-- Name: speedmap_proto_rs_info_idx; Type: INDEX; Schema: public; Owner: docker
 --
 
 CREATE INDEX speedmap_proto_rs_info_idx ON public.speedmap_proto USING btree (rs_info_id);
 
 
 --
--- Name: analysis_proto analysis_proto_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: analysis_proto analysis_proto_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.analysis_proto
@@ -3248,7 +3307,7 @@ ALTER TABLE ONLY public.analysis_proto
 
 
 --
--- Name: c_car_class c_car_class_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: c_car_class c_car_class_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car_class
@@ -3256,7 +3315,7 @@ ALTER TABLE ONLY public.c_car_class
 
 
 --
--- Name: c_car c_car_class_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: c_car c_car_class_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car
@@ -3264,7 +3323,7 @@ ALTER TABLE ONLY public.c_car
 
 
 --
--- Name: c_car_driver c_car_driver_car_entry_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: c_car_driver c_car_driver_car_entry_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car_driver
@@ -3272,7 +3331,7 @@ ALTER TABLE ONLY public.c_car_driver
 
 
 --
--- Name: c_car_entry c_car_entry_car_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: c_car_entry c_car_entry_car_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car_entry
@@ -3280,7 +3339,7 @@ ALTER TABLE ONLY public.c_car_entry
 
 
 --
--- Name: c_car_entry c_car_entry_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: c_car_entry c_car_entry_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car_entry
@@ -3288,7 +3347,7 @@ ALTER TABLE ONLY public.c_car_entry
 
 
 --
--- Name: c_car c_car_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: c_car c_car_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car
@@ -3296,7 +3355,7 @@ ALTER TABLE ONLY public.c_car
 
 
 --
--- Name: c_car_team c_car_team_car_entry_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: c_car_team c_car_team_car_entry_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.c_car_team
@@ -3304,7 +3363,7 @@ ALTER TABLE ONLY public.c_car_team
 
 
 --
--- Name: car_state_proto car_state_proto_rs_info_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: car_state_proto car_state_proto_rs_info_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.car_state_proto
@@ -3312,7 +3371,7 @@ ALTER TABLE ONLY public.car_state_proto
 
 
 --
--- Name: event_ext event_ext_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: event_ext event_ext_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.event_ext
@@ -3320,7 +3379,7 @@ ALTER TABLE ONLY public.event_ext
 
 
 --
--- Name: event event_tenant_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: event event_tenant_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.event
@@ -3328,7 +3387,7 @@ ALTER TABLE ONLY public.event
 
 
 --
--- Name: event event_track_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: event event_track_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.event
@@ -3336,7 +3395,7 @@ ALTER TABLE ONLY public.event
 
 
 --
--- Name: msg_state_proto msg_state_proto_rs_info_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: msg_state_proto msg_state_proto_rs_info_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.msg_state_proto
@@ -3344,7 +3403,7 @@ ALTER TABLE ONLY public.msg_state_proto
 
 
 --
--- Name: race_state_proto race_state_proto_rs_info_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: race_state_proto race_state_proto_rs_info_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.race_state_proto
@@ -3352,7 +3411,7 @@ ALTER TABLE ONLY public.race_state_proto
 
 
 --
--- Name: rs_info rs_info_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: rs_info rs_info_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.rs_info
@@ -3360,7 +3419,7 @@ ALTER TABLE ONLY public.rs_info
 
 
 --
--- Name: speedmap_proto speedmap_proto_rs_info_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: speedmap_proto speedmap_proto_rs_info_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: docker
 --
 
 ALTER TABLE ONLY public.speedmap_proto
